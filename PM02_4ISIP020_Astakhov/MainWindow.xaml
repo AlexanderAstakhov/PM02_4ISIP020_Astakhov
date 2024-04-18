@@ -1,0 +1,40 @@
+﻿<Window x:Class="PM02_4ISIP020_Astakhov.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PM02_4ISIP020_Astakhov"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Спрос" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="1677" Margin="58,10,177,6" Grid.ColumnSpan="2" Height="22"/>
+        <TextBox x:Name="txtConsumerDemand" Grid.Row="1" Margin="58,23,177,10" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <TextBlock Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="1677" Margin="58,23,177,2.5" Grid.ColumnSpan="2" Height="24"><Run Text="Кол-во продаж"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="txtSupplierSupply" Grid.Row="3" Margin="58,47,177,2" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+
+        <TextBlock Text="Стоитмосить продаж" TextWrapping="Wrap" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="1677" Margin="58,33,177,140" Grid.ColumnSpan="2" Height="22"/>
+        <TextBox x:Name="txtCostMatrix" Grid.Row="5" Margin="58,77,177,93" Grid.ColumnSpan="2"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Content="Рассчитать" Click="SolveByMinimumCost" Grid.Row="5" Width="1677" Margin="58,141,177,639" Height="81" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Content="Очистить поля" Click="ClearFields" Grid.Column="0" Grid.Row="6" Width="1677" Margin="58,70,177,569" Grid.ColumnSpan="2" Height="27"/>
+        <Button VerticalAlignment="Center"  HorizontalAlignment="Center" Content="Очистить решение" Click="ClearSolution" Grid.Column="0" Grid.Row="6" Width="1677" Margin="58,148,177,491" Grid.ColumnSpan="2" Height="27"/>
+        <Button VerticalAlignment="Center"  HorizontalAlignment="Center" Content="Выгрузить в текстовый файл" Grid.Row="6" Width="1677" Margin="58,193,177,446" Height="27" Grid.ColumnSpan="2" Click="Button_Click"/>
+
+        <TextBlock Text="Решение:" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="58,225,587,419" Width="311" Height="22"/>
+        <TextBox x:Name="txtSolution" Grid.Row="6" IsReadOnly="True" Margin="58,298,177,127" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
